@@ -60,7 +60,7 @@ const SignUp = () => {
           type="password"
           placeholder="password"
           className="border p-3 rounded-lg"
-          id="password"
+          id= "password"
           onChange={handleChange}
         />
         <button
