@@ -63,8 +63,17 @@ export const google = async (req, res, next) => {
         .cookie("treeprog_token", token, { httpOnly: true })
         .status(200)
         .json(rest);
-        
+
     }
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const signOut = async (req, res, next) => {
+  try {
+    res.clearCookie('treeprog_token');
+    res.status(200).json('User has been logged out!');
   } catch (error) {
     next(error);
   }
