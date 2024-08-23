@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { connectDB } from "./config/DB.js";
 import userRouter from "./routes/user.route.js";
 import AuthRouter from "./routes/auth.route.js"
+import ListingRouter from "./routes/listing.route.js"
 const app = express();
 dotenv.config();
 app.use(express.json());
@@ -18,6 +19,8 @@ app.listen(PORT, () => {
 
 app.use("/api/user", userRouter);
 app.use("/api/auth" , AuthRouter);
+app.use("/api/listing" , ListingRouter);
+
 
 //midlware for handling errors
 app.use((err,req,res,next)=> {
