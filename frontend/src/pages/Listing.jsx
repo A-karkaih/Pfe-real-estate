@@ -40,7 +40,7 @@ export default function Listing() {
         setListing(data);
         setLoading(false);
         setError(false);
-        console.log(currentUser);
+        console.log(data.userRef);
         
       } catch (error) {
         setError(true);
