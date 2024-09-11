@@ -9,7 +9,7 @@ import path from 'path';
 
 const app = express();
 
-const __dirname = path.resolve();
+
 
 dotenv.config();
 app.use(express.json());
@@ -25,6 +25,8 @@ app.listen(PORT, () => {
 app.use("/api/user", userRouter);
 app.use("/api/auth" , AuthRouter);
 app.use("/api/listing" , ListingRouter);
+
+const __dirname = path.resolve();
 
 app.use(express.static(path.join(__dirname, '/frontend/dist')));
 app.get('*', (req, res) => {
